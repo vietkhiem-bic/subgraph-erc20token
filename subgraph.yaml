@@ -1,0 +1,26 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: TestERC20Token
+    network: arbitrum-sepolia
+    source:
+      address: "0xe52854C746542694797253A65d4d19E9BA44F29C"
+      abi: TestERC20Token
+      startBlock: 55864743
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Transfer
+      abis:
+        - name: TestERC20Token
+          file: ./abis/TestERC20Token.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/test-erc-20-token.ts

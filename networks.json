@@ -1,0 +1,8 @@
+{
+  "arbitrum-sepolia": {
+    "TestERC20Token": {
+      "address": "0xe52854C746542694797253A65d4d19E9BA44F29C",
+      "startBlock": 55864743
+    }
+  }
+}
