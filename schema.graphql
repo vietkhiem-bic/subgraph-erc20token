@@ -7,3 +7,9 @@ type Transfer @entity(immutable: true) {
   blockTimestamp: BigInt!
   transactionHash: Bytes!
 }
+
+type AddressStatistic @entity {
+  id: Bytes!
+  address: Bytes! # address
+  totalAmount: BigInt!
+}
